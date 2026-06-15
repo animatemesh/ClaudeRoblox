@@ -27,12 +27,12 @@ export interface BrainrotDef {
 }
 
 export const BRAINROTS: BrainrotDef[] = [
-  { id: 'avocado',  name: 'Avocadini Gorillini', file: '/assets/AvocadoGorilla_Merged_Animations.fbx' },
-  { id: 'ballerina', name: 'Ballerina Cappuccina', file: '/assets/BallerinaMerged_Animations.fbx' },
-  { id: 'patapim',  name: 'Brr Brr Patapim',      file: '/assets/BrrBrrPatapim_Merged_Animations.fbx' },
-  { id: 'jobjob',   name: 'Job Job Job Sahur',    file: '/assets/JobJobMerged_Animations.fbx' },
-  { id: 'segnora',  name: 'La Segnora Bombardina', file: '/assets/segnoraMerged_Animations.fbx' },
-  { id: 'sixseven', name: 'Six Seven',            file: '/assets/sixsevenMerged_Animations.fbx' },
+  { id: 'avocado',  name: 'Avocadini Gorillini', file: 'assets/AvocadoGorilla_Merged_Animations.fbx' },
+  { id: 'ballerina', name: 'Ballerina Cappuccina', file: 'assets/BallerinaMerged_Animations.fbx' },
+  { id: 'patapim',  name: 'Brr Brr Patapim',      file: 'assets/BrrBrrPatapim_Merged_Animations.fbx' },
+  { id: 'jobjob',   name: 'Job Job Job Sahur',    file: 'assets/JobJobMerged_Animations.fbx' },
+  { id: 'segnora',  name: 'La Segnora Bombardina', file: 'assets/segnoraMerged_Animations.fbx' },
+  { id: 'sixseven', name: 'Six Seven',            file: 'assets/sixsevenMerged_Animations.fbx' },
 ];
 
 export function rollRarity(rng: () => number = Math.random): RarityDef {

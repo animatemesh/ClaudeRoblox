@@ -187,27 +187,28 @@ export class AssetManager {
     let done = 0;
     const tick = (label: string) => onProgress(label, ++done, total);
 
-    const mapP = gltf.loadAsync('/assets/brainrotmap.glb').then((g) => {
+    const assetBase = import.meta.env.BASE_URL + 'assets/';
+    const mapP = gltf.loadAsync(assetBase + 'brainrotmap.glb').then((g) => {
       this.mapScene = g.scene as unknown as THREE.Group;
       tick('Map');
     });
-    const baseP = gltf.loadAsync('/assets/Base1floor.glb').then((g) => {
+    const baseP = gltf.loadAsync(assetBase + 'Base1floor.glb').then((g) => {
       this.baseTemplate = g.scene as unknown as THREE.Group;
       tick('Base building');
     });
-    const playerP = gltf.loadAsync('/assets/roblox_player.glb').then((g) => {
+    const playerP = gltf.loadAsync(assetBase + 'roblox_player.glb').then((g) => {
       this.playerTemplate = g.scene as unknown as THREE.Group;
       this.playerClips = g.animations ?? [];
       tick('Character');
     });
-    const batP = gltf.loadAsync('/assets/simple_bat.glb').then((g) => {
+    const batP = gltf.loadAsync(assetBase + 'simple_bat.glb').then((g) => {
       // The bat is a static prop: bake its (badly bound) skinned geometry to a
       // plain mesh so ancestor scales/rotations behave normally.
       this.batTemplate = bakeToStatic(g.scene as unknown as THREE.Group);
       tick('Bat');
     });
     const brainrotPs = BRAINROTS.map((def) =>
-      fbx.loadAsync(def.file).then((obj) => {
+      fbx.loadAsync(import.meta.env.BASE_URL + def.file).then((obj) => {
         this.brainrotTemplates.set(def.id, {
           obj: obj as unknown as THREE.Group,
           clips: (obj as unknown as THREE.Group).animations ?? [],
