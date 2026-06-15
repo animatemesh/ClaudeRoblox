@@ -110,3 +110,4 @@ export class SoundFx {
     setTimeout(() => this.env('square', 520, 520, 0.16, 0.25), 140);
   }
 }
+
